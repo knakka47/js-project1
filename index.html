@@ -24,6 +24,7 @@
             </div>
         </nav>
         <div class="information">
+            <div class="overlay"></div>
             <img src="images/mobile.png" class="mobile">
             <div id="circle">
                 <div class="feature one">
@@ -64,6 +65,30 @@
             <h3>Features</h3>
             <img src="images/arrow.png" id="downBtn">
         </div>
+
+        <script>
+            var circle = document.getElementById("circle"); //Insantiating variables
+            var UpBtn = document.getElementById("UpBtn");
+            var downBtn = document.getElementById("downBtn");
+
+            var rotateValue = circle.style.transform;
+            var rotateSum;
+
+            UpBtn.onclick = function () //Event listener upon clicking UpBtn variable
+            {
+                rotateSum = rotateValue + "rotate(-90deg)";
+                circle.style.transform = rotateSum;
+                rotateValue = rotateSum;
+            }
+
+            downBtn.onclick = function () //Event listener upon clicking UpBtn variable
+            {
+                rotateSum = rotateValue + "rotate(+90deg)";
+                circle.style.transform = rotateSum;
+                rotateValue = rotateSum;
+            }
+
+        </script>
     </div>
 </body>
 
